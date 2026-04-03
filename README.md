@@ -1,63 +1,45 @@
-# Intelligent-surveillance-system 🎥
+# Intelligent Surveillance System 🎥
 
-An advanced, lightweight, real-time Computer Vision CCTV analytics suite. This project leverages the ultra-fast **YOLOv11 ONNX** inference engine wrapped in a beautifully styled, hardware-accelerated native desktop dashboard built with **Tkinter** & **OpenCV**. 
+Welcome to the **Intelligent Surveillance System** release repository. This repository hosts the standalone Windows executable (`.exe`) for our real-time AI-powered CCTV analytics suite. 
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Framework](https://img.shields.io/badge/Framework-ONNX%20%7C%20OpenCV-orange)
+No Python installation, no confusing setups, and no terminal commands are required—just download and run.
 
-## 🚀 Key Features
+---
 
-* **Real-time Analytics Dashboard:** A sleek, fully native Python Tkinter GUI featuring dark slate themes, hardware-accelerated video rendering, CSS-like component alignment, and smooth interactive animations. No browser, Flask, or web-backend overhead.
-* **Three Core Monitoring Modes:**
-  * 🧑 **Person Detection:** Monitor and track unique pedestrian footprints using robust Centroid Tracking.
-  * 🚲 **Bike Violations:** specifically filter and track illegal 2-wheelers traversing pedestrian/restricted paths.
-  * 🚗 **Traffic Flow:** Analyze and count moving instances of 2-Wheelers and 4-Wheelers.
-* **High-Fidelity AI Feeds:** We solved the traditional "blurred scaling" issue by ensuring the AI outputs (`predict()`) map dynamically onto the native resolution screen captures (`mss()`), interpolating down cleanly via `cv2.INTER_AREA`.
-* **Automated & Manual CSV Reporting:** 
-  * The system polls your clock to automatically dump a daily traffic CSV log asynchronously at exactly `00:00:00` (Midnight).
-  * Includes a simple one-click manual CSV export button straight in the dashboard GUI.
-* **Standalone Executable Compilation:** Pre-configured for deployment with **PyInstaller**. Converts the entire OpenCV Python environment and ONNX models into a portable, single-file `.exe`.
+## 🚀 Easy Installation
 
-## 🛠️ Project Structure
+1. Go to the [**Releases**](../../releases) tab on the right side of this repository.
+2. Download the latest `Intelligent-surveillance-system.exe` file.
+3. Place the file anywhere on your Windows machine (Desktop, Documents, etc.).
+4. Double-click the `.exe` to launch the application instantly.
 
-* `gui.py` - The overarching Tkinter Graphical Interface running the async `root.after()` event loop.
-* `main.py` - The legacy CLI-based OpenCV interface. 
-* `onnx_yolo.py` - Contains the rigorous preprocessing and ONNX Non-Maximum Suppression (NMS) mechanics to bridge YOLO to Python tracking safely.
-* `tracker.py` - A sophisticated Euclidean distance-based object `CentroidTracker` that maps detections over sequential frames.
-* `/modules` - The AI handler scripts (`bike.py`, `person.py`, `traffic.py`).
-* `/models` - The directory housing `.onnx` logic weights (e.g. `yolo11n.onnx`).
-* `/reports` - Directory where daily `.csv` tracking exports are saved.
+---
 
-## 💾 Installation & Usage
+## 🌟 Key Features
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/Intelligent-surveillance-system.git
-   cd Intelligent-surveillance-system
-   ```
+The Intelligent Surveillance System operates entirely on your local machine using a robust standalone desktop GUI. It continuously processes your screen or camera feed in real-time using ONNX-accelerated AI models.
 
-2. **Install core dependencies:**
-   ```bash
-   pip install opencv-python onnxruntime numpy mss pillow
-   ```
+### 🔍 Monitoring Modes
+- **🧑‍🤝‍🧑 Person Detection**: Tracks and counts unique human pedestrians moving through your field of view dynamically.
+- **🚲 Bike Violations**: Accurately detects and counts illegal motorcycle/bike presences in restricted zones (like footpaths).
+- **🚗 Traffic Flow Tracker**: Monitors and estimates 2-wheeler and 4-wheeler vehicle traffic density in real-time.
 
-3. **Run the Application:**
-   ```bash
-   python gui.py
-   ```
+### 📊 Professional Data Export
+- **Automated Midnight Reports**: The desktop app runs silently in the background and automatically generates a timestamped `.csv` file detailing your tracking counts at exactly **12:00 AM** every night.
+- **Manual Data Dumps**: Need standard reports during your shift? Click the "Download Report" button on our Tkinter dashboard to instantly export the current counts to the `reports/` folder.
 
-## 📦 Building the Standalone `.EXE`
+---
 
-To package the tool into a completely standalone Windows Executable (requiring absolutely zero Python setup for end-users), leverage PyInstaller:
+## 🛠️ FAQs & Support
 
-```bash
-pip install pyinstaller
-pyinstaller --onefile --windowed --add-data "models;models" gui.py
-```
+**Does this require an internet connection?**
+No, edge-AI tracks and processes all the surveillance frames purely locally.
 
-Your fully featured `gui.exe` application will appear inside the `/dist` directory. 
+**Where do the downloaded reports go?**
+The `.csv` files will explicitly be generated inside a `reports/` folder located in the exact same directory where you placed the `.exe` file.
 
-## 👨‍💻 Developed By
+**My application is being flagged by Windows Defender?**
+Since this executable hasn't been put through an expensive Microsoft code-signing certificate yet, Windows SmartScreen may halt it initially. Click **"More Info" -> "Run Anyway"**.
 
-Designed and developed by **Siddharth | eZpedal**.
+---
+*Designed & Built for eZpedal by Siddharth | 2026*
