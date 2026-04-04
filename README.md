@@ -9,7 +9,7 @@ No Python installation, no confusing setups, and no terminal commands are requir
 ## 🚀 Easy Installation
 
 1. Go to the [**Releases**](../../releases) tab on the right side of this repository.
-2. Download the latest `Intelligent-surveillance-system.exe` file.
+2. Download the latest `iss.exe` file.
 3. Place the file anywhere on your Windows machine (Desktop, Documents, etc.).
 4. Double-click the `.exe` to launch the application instantly.
 
