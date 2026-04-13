@@ -39,11 +39,7 @@ When you run the launcher for the first time:
 
 ### Update Window
 
-During updates, you'll see a clean overlay window:
-┌─────────────────────────────┐
-│ Downloading ISS Update...   │
-│ Please wait.                │
-└─────────────────────────────┘
+During updates, you'll see a clean overlay window
 
 ---
 
