@@ -1,4 +1,4 @@
-# Intelligent Surveillance System 🎥
+# Visionize AI Updates🤖
 
 Welcome to the **Intelligent Surveillance System** release repository. This repository hosts the standalone Windows executable (`.exe`) for our real-time AI-powered CCTV analytics suite. 
 
