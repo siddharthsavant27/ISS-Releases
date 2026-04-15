@@ -26,13 +26,13 @@ The `ISS-Launcher.exe` is a smart bootstrap that ensures you always have the lat
 1. **Version Check**: When launched, the launcher checks your current version (stored in `version.txt`)
 2. **GitHub Query**: It fetches the latest release tag from GitHub API
 3. **Smart Comparison**: If a newer version exists, it automatically downloads it
-4. **Seamless Launch**: After updating (or if already up-to-date), it launches the main `gui.exe`
+4. **Seamless Launch**: After updating (or if already up-to-date), it launches the main `app.exe`
 5. **Silent Error Handling**: If offline or GitHub is unreachable, it launches your existing version without interruption
 
 ### First-Time Setup
 
 When you run the launcher for the first time:
-- No `gui.exe` exists locally
+- No `app.exe` exists locally
 - The launcher downloads the latest version automatically
 - A friendly progress window shows "Downloading ISS Update..."
 - Once complete, the main application launches
@@ -63,7 +63,7 @@ The Intelligent Surveillance System operates entirely on your local machine usin
 After first launch, your folder will contain:
 Your chosen folder/
 ├── ISS-Launcher.exe # The launcher (run this)
-├── gui.exe # Main application (auto-downloaded)
+├── app.exe # Main application (auto-downloaded)
 ├── version.txt # Current version tracking
 └── reports/ # Generated CSV reports folder
 
